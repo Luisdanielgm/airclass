@@ -1,3 +1,5 @@
+'use client'
+
 import GoogleDriveVideoPlayer from "@/components/google-drive-video-player";
 
 export default function Home() {
