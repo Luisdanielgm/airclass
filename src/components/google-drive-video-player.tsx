@@ -186,8 +186,14 @@ export default function Component() {
   const [currentTime, setCurrentTime] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
   const [highlightedIndex, setHighlightedIndex] = useState(0)
+  const [iframeSrc, setIframeSrc] = useState('')
   const iframeRef = useRef<HTMLIFrameElement>(null)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
+
+  // Inicializar iframeSrc después del montaje
+  useEffect(() => {
+    setIframeSrc(`https://drive.google.com/file/d/1Ec5T8Cqxs1LocLJArtEJcmSXe1PNAsBh/preview?enablejsapi=1&origin=${window.location.origin}&controls=1&modestbranding=1`)
+  }, [])
 
   // Función para sincronizar el tiempo del video
   const startTimeSync = React.useCallback(() => {
@@ -241,32 +247,31 @@ export default function Component() {
     };
   }, []);
 
-  // Escuchar eventos del iframe
+  // Modificar el useEffect para los eventos del iframe
   useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
-      if (event.origin !== window.location.origin) return;
+    if (typeof window !== 'undefined') {
+      const handleMessage = (event: MessageEvent) => {
+        if (event.origin !== window.location.origin) return;
 
-      try {
-        const data = event.data;
-        if (data.event === 'onStateChange') {
-          setIsPlaying(data.info === 1);
-          if (data.info === 1 && !intervalRef.current) {
-            startTimeSync();
-          } else if (data.info !== 1 && intervalRef.current) {
-            stopTimeSync();
+        try {
+          const data = event.data;
+          if (data.event === 'onStateChange') {
+            setIsPlaying(data.info === 1);
+            if (data.info === 1 && !intervalRef.current) {
+              startTimeSync();
+            } else if (data.info !== 1 && intervalRef.current) {
+              stopTimeSync();
+            }
           }
+        } catch (error) {
+          console.error('Error handling message:', error);
         }
-      } catch (error) {
-        console.error('Error handling message:', error);
-      }
-    };
+      };
 
-    window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
+      window.addEventListener('message', handleMessage);
+      return () => window.removeEventListener('message', handleMessage);
+    }
   }, [startTimeSync, stopTimeSync]);
-
-  // Modificar la URL del iframe para incluir los parámetros necesarios
-  const iframeSrc = `https://drive.google.com/file/d/1Ec5T8Cqxs1LocLJArtEJcmSXe1PNAsBh/preview?enablejsapi=1&origin=${window.location.origin}&controls=1&modestbranding=1`;
 
   const handleWordClick = (time: number) => {
     setCurrentTime(time)
