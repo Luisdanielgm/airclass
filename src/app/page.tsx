@@ -1,6 +1,16 @@
 'use client'
 
+import { Suspense } from 'react'
+
 export default function Home() {
+  return (
+    <Suspense fallback={<div>Cargando...</div>}>
+      <HomeContent />
+    </Suspense>
+  )
+}
+
+function HomeContent() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 p-8">
       <div className="max-w-4xl mx-auto text-center">
