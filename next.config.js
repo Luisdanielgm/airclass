@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['@mui/material', '@mui/system', '@emotion/react', '@emotion/styled']
+    images: {
+        domains: ['localhost'],
+        unoptimized: process.env.NODE_ENV === 'development',
+    },
+    output: 'standalone',
+    reactStrictMode: true,
 };
 
 module.exports = nextConfig;

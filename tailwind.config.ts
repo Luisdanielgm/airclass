@@ -1,19 +1,50 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
+import animate from "tailwindcss-animate";
+import typography from '@tailwindcss/typography';
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+    darkMode: 'class',
+    content: [
+        './src/**/*.{js,ts,jsx,tsx,mdx}',
+    ],
+    theme: {
+        extend: {
+            colors: {
+                border: 'hsl(var(--border))',
+                background: 'hsl(var(--background))',
+                foreground: 'hsl(var(--foreground))',
+                primary: {
+                    DEFAULT: 'hsl(var(--primary))',
+                    foreground: 'hsl(var(--primary-foreground))',
+                },
+                secondary: {
+                    DEFAULT: 'hsl(var(--secondary))',
+                    foreground: 'hsl(var(--secondary-foreground))',
+                },
+                muted: {
+                    DEFAULT: 'hsl(var(--muted))',
+                    foreground: 'hsl(var(--muted-foreground))',
+                },
+                accent: {
+                    DEFAULT: 'hsl(var(--accent))',
+                    foreground: 'hsl(var(--accent-foreground))',
+                },
+            },
+            keyframes: {
+                "plane-bounce": {
+                    "0%, 100%": { transform: "translateY(0) rotate(-10deg)" },
+                    "50%": { transform: "translateY(-20px) rotate(10deg)" }
+                }
+            },
+            animation: {
+                "plane": "plane-bounce 2s ease-in-out infinite"
+            }
+        },
     },
-  },
-  plugins: [],
+    plugins: [
+        animate,
+        typography,
+    ],
 };
+
 export default config;
