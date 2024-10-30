@@ -3,11 +3,6 @@ import "./globals.css";
 import { Sidebar } from '@/components/layout/Sidebar'
 import { LoadingProvider } from '@/components/providers/LoadingProvider'
 
-export const metadata = {
-  title: "Plataforma de Cursos de Aeronáutica",
-  description: "Plataforma educativa especializada en valuación de aeronaves",
-};
-
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -27,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>
+      <body className="dark">
         <LoadingProvider>
           <Sidebar />
           <main className="md:ml-64">
