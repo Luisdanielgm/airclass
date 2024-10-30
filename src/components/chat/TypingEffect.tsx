@@ -55,7 +55,7 @@ export const TypingEffect = ({ text }: TypingEffectProps) => {
     <div className="relative overflow-hidden">
       <div className="flex flex-col space-y-2">
         <div className="relative" ref={textRef}>
-          <ReactMarkdown className="prose dark:prose-invert max-w-none prose-white whitespace-pre-wrap">
+          <ReactMarkdown className="prose max-w-none text-black whitespace-pre-wrap">
             {displayText}
           </ReactMarkdown>
           {!isTypingComplete && (

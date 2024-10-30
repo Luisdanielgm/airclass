@@ -3,7 +3,7 @@ export const LoadingDots = () => (
     {[0, 1, 2].map((i) => (
       <span
         key={i}
-        className="w-2 h-2 bg-white rounded-full inline-block animate-bounce"
+        className="w-2 h-2 bg-blue-500 rounded-full inline-block animate-bounce"
         style={{ animationDelay: `${i * 0.1}s`, animationDuration: '0.6s' }}
       ></span>
     ))}

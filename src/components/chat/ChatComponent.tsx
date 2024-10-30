@@ -86,10 +86,10 @@ export function ChatComponent({ transcriptionData }: ChatComponentProps) {
               <AvatarFallback>✈️</AvatarFallback>
             </Avatar>
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-primary dark:text-primary/90">
+              <span className="text-lg font-bold text-[#000] dark:text-[#000]">
                 Asistente de Valuación Aeronáutica
               </span>
-              <span className="text-sm text-primary/70 dark:text-primary/60">
+              <span className="text-sm text-[#000]/70 dark:text-[#000]/60">
                 Consulta tus dudas sobre el curso
               </span>
             </div>
@@ -114,11 +114,17 @@ export function ChatComponent({ transcriptionData }: ChatComponentProps) {
                   className={`rounded-lg px-4 py-2 max-w-[80%] shadow-sm ${
                     message.sender === 'user'
                       ? 'bg-blue-500 text-white'
-                      : 'bg-gray-100 text-black'
+                      : 'bg-gray-100'
                   }`}
                 >
                   {message.sender === 'bot' && message.isTyping ? (
-                    <TypingEffect text={message.text} />
+                    <div className="text-black">
+                      <TypingEffect text={message.text} />
+                    </div>
+                  ) : message.sender === 'user' ? (
+                    <ReactMarkdown className="prose max-w-none text-white">
+                      {message.text}
+                    </ReactMarkdown>
                   ) : (
                     <ReactMarkdown className="prose max-w-none text-black">
                       {message.text}
@@ -127,7 +133,9 @@ export function ChatComponent({ transcriptionData }: ChatComponentProps) {
                 </div>
                 {message.sender === 'user' && (
                   <Avatar className="h-6 w-6 ml-2 mt-1 flex-shrink-0">
-                    <AvatarFallback>TÚ</AvatarFallback>
+                    <AvatarFallback className="flex items-center justify-center text-xs px-2">
+                      TÚ
+                    </AvatarFallback>
                   </Avatar>
                 )}
               </div>
@@ -137,7 +145,7 @@ export function ChatComponent({ transcriptionData }: ChatComponentProps) {
                 <Avatar className="h-6 w-6 mr-2 mt-1 flex-shrink-0">
                   <AvatarFallback>✈️</AvatarFallback>
                 </Avatar>
-                <div className="bg-[var(--chat-bot-msg-bg)] border-accent border text-white rounded-lg px-4 py-2 shadow-sm">
+                <div className="bg-[var(--chat-bot-msg-bg)] border-accent border rounded-lg px-4 py-2 shadow-sm">
                   <LoadingDots />
                 </div>
               </div>
@@ -154,7 +162,7 @@ export function ChatComponent({ transcriptionData }: ChatComponentProps) {
             placeholder="Escribe tu mensaje..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="flex-grow bg-white text-slate-900 focus-visible:ring-blue-500 border-slate-200"
+            className="flex-grow text-slate-900 focus-visible:ring-blue-500 border-slate-200"
             aria-label="Escribe tu mensaje"
           />
           <Button 
