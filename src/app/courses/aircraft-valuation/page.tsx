@@ -1,5 +1,6 @@
 'use client'
 
+import { Suspense } from 'react'
 import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -9,6 +10,14 @@ import { ChatComponent } from '@/components/chat/ChatComponent'
 import { aircraftValuation } from '@/data/courses'
 
 export default function AircraftValuationPage() {
+  return (
+    <Suspense fallback={<div>Cargando...</div>}>
+      <AircraftValuationContent />
+    </Suspense>
+  )
+}
+
+function AircraftValuationContent() {
   const [currentTime, setCurrentTime] = useState(0)
   const searchParams = useSearchParams()
   const sectionId = searchParams.get('section') || 'introduction'
