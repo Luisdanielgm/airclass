@@ -1,10 +1,19 @@
 'use client'
 
+import { Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import Loading from '@/components/ui/Loading'
 
 export function LoadingProvider({ children }: { children: React.ReactNode }) {
+  return (
+    <Suspense fallback={<Loading />}>
+      <LoadingContent>{children}</LoadingContent>
+    </Suspense>
+  )
+}
+
+function LoadingContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const [isLoading, setIsLoading] = useState(false)
