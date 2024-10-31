@@ -45,7 +45,7 @@ export function TranscriptionPanel({
         bgcolor: 'background.default',
         height: '100%',
         maxHeight: 'calc(100vh - 200px)',
-        overflow: 'auto'
+        overflow: 'auto',
       }}
     >
       <Typography variant="h6" gutterBottom>
