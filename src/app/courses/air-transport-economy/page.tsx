@@ -60,20 +60,20 @@ function AirTransportEconomyContent() {
             <div className="flex justify-between items-center px-2">
               <Link
                 href={previousSection?.path || '#'}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 ${
+                className={`flex items-center gap-1 md:gap-2 px-2 md:px-4 py-1 md:py-2 rounded-lg transition-all duration-200 text-sm md:text-base ${
                   previousSection 
                     ? 'bg-blue-500 hover:bg-blue-600 text-white' 
                     : 'bg-slate-700 text-slate-400 cursor-not-allowed'
                 }`}
                 onClick={e => !previousSection && e.preventDefault()}
               >
-                <ChevronLeftIcon className="w-5 h-5" />
+                <ChevronLeftIcon className="w-4 h-4 md:w-5 md:h-5" />
                 {previousSection ? 'Video anterior' : 'No hay video anterior'}
               </Link>
 
               <Link
                 href={nextSection?.path || '#'}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 ${
+                className={`flex items-center gap-1 md:gap-2 px-2 md:px-4 py-1 md:py-2 rounded-lg transition-all duration-200 text-sm md:text-base ${
                   nextSection 
                     ? 'bg-blue-500 hover:bg-blue-600 text-white' 
                     : 'bg-slate-700 text-slate-400 cursor-not-allowed'
@@ -81,7 +81,7 @@ function AirTransportEconomyContent() {
                 onClick={e => !nextSection && e.preventDefault()}
               >
                 {nextSection ? 'Siguiente video' : 'No hay más videos'}
-                <ChevronRightIcon className="w-5 h-5" />
+                <ChevronRightIcon className="w-4 h-4 md:w-5 md:h-5" />
               </Link>
             </div>
           </div>
