@@ -31,13 +31,38 @@ const COURSES: Course[] = [
     sections: [
       {
         title: 'Introducción al Curso',
-        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1,
+        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_1,
         path: '/courses/aircraft-valuation?section=introduction'
       },
       {
-        title: 'Antecedentes del Instructor',
-        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_2,
+        title: 'Biografía del ponente',
+        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_2,
         path: '/courses/aircraft-valuation?section=instructor-background'
+      },
+      {
+        title: 'Introducción a COVBAERO',
+        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_3,
+        path: '/courses/aircraft-valuation?section=introduction-covbaero'
+      },
+      {
+        title: 'Presentación de los participantes 1',
+        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_4,
+        path: '/courses/aircraft-valuation?section=participants-presentation-1'
+      },
+      {
+        title: 'Presentación de los participantes 2',
+        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_5,
+        path: '/courses/aircraft-valuation?section=participants-presentation-2'
+      },
+      {
+        title: 'Hitos de la Aviación',
+        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_6,
+        path: '/courses/aircraft-valuation?section=aviation-history'
+      },
+      {
+        title: 'Legislación Aeronáutica',
+        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_7,
+        path: '/courses/aircraft-valuation?section=aviation-legislation'
       }
     ]
   }
