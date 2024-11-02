@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Sidebar } from '@/components/layout/Sidebar'
 import { LoadingProvider } from '@/components/providers/LoadingProvider'
+import { SidebarProvider } from '@/components/layout/Sidebar'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,10 +25,12 @@ export default function RootLayout({
     <html lang="es" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="dark">
         <LoadingProvider>
-          <Sidebar />
-          <main className="md:ml-64">
-            {children}
-          </main>
+          <SidebarProvider>
+            <Sidebar />
+            <main className="md:ml-64">
+              {children}
+            </main>
+          </SidebarProvider>
         </LoadingProvider>
       </body>
     </html>

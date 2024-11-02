@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, Suspense } from 'react'
+import { useState, useEffect, createContext, useContext, ReactNode } from 'react'
 import Link from 'next/link'
 import { 
   MenuIcon, 
@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/iconos'
 import { CLOUDINARY_VIDEOS } from '@/config/cloudinary'
 
+// Tipos
 interface CourseSection {
   title: string
   videoId: string
@@ -23,7 +24,53 @@ interface Course {
   sections: CourseSection[]
 }
 
-// Ejemplo de datos - Después podrías moverlo a un archivo separado
+interface SidebarContextType {
+  isMobileMenuOpen: boolean
+  toggleMobileMenu: () => void
+}
+
+// Contexto
+const SidebarContext = createContext<SidebarContextType | undefined>(undefined)
+
+// Provider
+export function SidebarProvider({ children }: { children: ReactNode }) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  return (
+    <SidebarContext.Provider value={{ isMobileMenuOpen, toggleMobileMenu }}>
+      {children}
+    </SidebarContext.Provider>
+  )
+}
+
+// Hook personalizado
+export function useSidebar() {
+  const context = useContext(SidebarContext)
+  if (context === undefined) {
+    throw new Error('useSidebar must be used within a SidebarProvider')
+  }
+  return context
+}
+
+// Botón del Sidebar
+export function SidebarTrigger() {
+  const { toggleMobileMenu } = useSidebar()
+
+  return (
+    <button
+      onClick={toggleMobileMenu}
+      className="p-2 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors duration-200"
+    >
+      <MenuIcon className="w-6 h-6" />
+    </button>
+  )
+}
+
+// Datos de los cursos
 const COURSES: Course[] = [
   {
     id: 'aircraft-valuation',
@@ -79,18 +126,11 @@ const COURSES: Course[] = [
   }
 ]
 
+// Componente principal del Sidebar
 export function Sidebar() {
-  return (
-    <Suspense fallback={null}>
-      <SidebarContent />
-    </Suspense>
-  )
-}
-
-function SidebarContent() {
   const [expandedCourse, setExpandedCourse] = useState<string | null>(null)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const { isMobileMenuOpen, toggleMobileMenu } = useSidebar()
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -102,23 +142,8 @@ function SidebarContent() {
     return () => window.removeEventListener('resize', checkIfMobile)
   }, [])
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
-
   return (
     <>
-      {/* Botón de menú hamburguesa para móvil */}
-      {isMobile && (
-        <button
-          onClick={toggleMobileMenu}
-          className="fixed top-4 left-4 z-50 p-2 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors duration-200"
-        >
-          <MenuIcon className="w-6 h-6" />
-        </button>
-      )}
-
-      {/* Sidebar para desktop */}
       <aside
         className={`${
           isMobile

@@ -9,7 +9,8 @@ import { TranscriptionPanel } from '@/components/video-player/common/Transcripti
 import { ChatComponent } from '@/components/chat/ChatComponent'
 import { aircraftValuation } from '@/data/courses/aircraft-valuation'
 import Link from 'next/link'
-import { ChevronLeftIcon, ChevronRightIcon } from '@/components/ui/iconos'
+import { ChevronLeftIcon, ChevronRightIcon, MenuIcon } from '@/components/ui/iconos'
+import { useSidebar } from '@/components/layout/Sidebar'
 
 export default function AircraftValuationPage() {
   return (
@@ -23,6 +24,7 @@ function AircraftValuationContent() {
   const [currentTime, setCurrentTime] = useState(0)
   const searchParams = useSearchParams()
   const sectionId = searchParams.get('section') || 'introduction'
+  const { toggleMobileMenu } = useSidebar()
   
   const currentSection = aircraftValuation.sections.find(
     section => section.id === sectionId
@@ -43,9 +45,17 @@ function AircraftValuationContent() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200">
       <div className="p-4">
-        <h1 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-          {aircraftValuation.title} - {currentSection.title}
-        </h1>
+        <div className="flex items-center gap-4 mb-6">
+          <button
+            onClick={toggleMobileMenu}
+            className="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors duration-200"
+          >
+            <MenuIcon className="w-6 h-6" />
+          </button>
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+            {aircraftValuation.title} - {currentSection.title}
+          </h1>
+        </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-4 h-[calc(100vh-120px)] overflow-hidden">
           <div className="lg:col-span-7 flex flex-col gap-4">
