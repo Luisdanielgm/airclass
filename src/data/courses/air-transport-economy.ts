@@ -9,6 +9,7 @@ export const airTransportEconomy: CourseData = {
       id: 'introduction-course',
       title: 'Introducción al Curso',
       videoId: CLOUDINARY_VIDEOS.AIR_TRANSPORT_ECONOMY_1_1,
+      path: '/courses/air-transport-economy?section=introduction-course',
       data: [
         { time: 0, text: "Bienvenido al curso en línea de Economía del transporte aéreo." },
         { time: 6, text: "Este curso está dividido en seis módulos de aprendizaje dinámico." },

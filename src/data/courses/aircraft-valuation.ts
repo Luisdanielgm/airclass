@@ -9,6 +9,7 @@ export const aircraftValuation: CourseData = {
       id: 'introduction',
       title: 'Introducción al Curso',
       videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_1,
+      path: '/courses/aircraft-valuation?section=introduction',
       data: [
         { time: 60, text: "Hola, ¿Qué tal? Muy buenas" },
         { time: 78, text: "tardes, sean bienvenidos a este" },
@@ -236,6 +237,7 @@ export const aircraftValuation: CourseData = {
       id: 'instructor-background',
       title: 'Antecedentes del Instructor',
       videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_2,
+      path: '/courses/aircraft-valuation?section=instructor-background',
       data: [
         { time: 0, text: "una breve reseña de su servidor." },
         { time: 4, text: "Soy originario de la Ciudad de México" },
@@ -321,6 +323,7 @@ export const aircraftValuation: CourseData = {
       id: 'introduction-covbaero',
       title: 'Introducción a COVBAERO',
       videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_3,
+      path: '/courses/aircraft-valuation?section=introduction-covbaero',
       data: [
         { time: 0, text: "que de todos modos si hay alguna duda o comentario podemos revisar cualquier punto." },
         { time: 6, text: "Vamos a hablar un poquito de lo que es el Colegio de Evaluadores de Bienes Aeronáuticos." },
@@ -391,6 +394,7 @@ export const aircraftValuation: CourseData = {
       id: 'participants-presentation-1',
       title: 'Presentación de los participantes 1',
       videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_4,
+      path: '/courses/aircraft-valuation?section=participants-presentation-1',
       data: [
         { time: 0, text: "déjenme ver porque tengo un mensajito de alguien" },
         { time: 2, text: "ok vamos a darle acceso a una persona" },
@@ -595,6 +599,7 @@ export const aircraftValuation: CourseData = {
       id: 'participants-presentation-2',
       title: 'Presentación de los participantes 2',
       videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_5,
+      path: '/courses/aircraft-valuation?section=participants-presentation-2',
       data: [
         { time: 0, text: "Bien, adelante. Al menos que tengamos otras cinco participantes, estaría muy bien." },
         { time: 4, text: "Sí, yo soy el ingeniero Freddy Muñoz, de la República Dominicana, compañero de Plinio." },
@@ -750,6 +755,7 @@ export const aircraftValuation: CourseData = {
       id: 'aviation-history',
       title: 'Hitos de la Aviación',
       videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_6,
+      path: '/courses/aircraft-valuation?section=aviation-history',
       data: [
         { time: 0, text: "Vamos a hablar un poquito siempre en la parte de aeronáutica." },
         { time: 7, text: "Es fundamental conocer de dónde partimos," },
@@ -876,6 +882,7 @@ export const aircraftValuation: CourseData = {
       id: 'aviation-legislation',
       title: 'Legislación Aeronáutica',
       videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_7,
+      path: '/courses/aircraft-valuation?section=aviation-legislation',
       data: [
         { time: 0, text: "realmente pues es una industria muy" },
         { time: 5, text: "compleja y también es una industria" },

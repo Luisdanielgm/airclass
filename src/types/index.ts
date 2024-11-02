@@ -8,6 +8,7 @@ export interface CourseSection {
   id: string
   title: string
   videoId: string
+  path: string;
   data: TranscriptionItem[]
 }
 
