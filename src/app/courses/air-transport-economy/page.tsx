@@ -7,30 +7,30 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import CloudinaryVideoPlayer from '@/components/video-player/cloudinary'
 import { TranscriptionPanel } from '@/components/video-player/common/TranscriptionPanel'
 import { ChatComponent } from '@/components/chat/ChatComponent'
-import { aircraftValuation } from '@/data/courses/aircraft-valuation'
+import { airTransportEconomy } from '@/data/courses/air-transport-economy'
 
-export default function AircraftValuationPage() {
+export default function AirTransportEconomyPage() {
   return (
     <Suspense fallback={<div>Cargando...</div>}>
-      <AircraftValuationContent />
+      <AirTransportEconomyContent />
     </Suspense>
   )
 }
 
-function AircraftValuationContent() {
+function AirTransportEconomyContent() {
   const [currentTime, setCurrentTime] = useState(0)
   const searchParams = useSearchParams()
-  const sectionId = searchParams.get('section') || 'introduction'
+  const sectionId = searchParams.get('section') || 'introduction-course'
   
-  const currentSection = aircraftValuation.sections.find(
+  const currentSection = airTransportEconomy.sections.find(
     section => section.id === sectionId
-  ) || aircraftValuation.sections[0]
+  ) || airTransportEconomy.sections[0]
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200">
       <div className="p-4">
         <h1 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-          {aircraftValuation.title} - {currentSection.title}
+          {airTransportEconomy.title} - {currentSection.title}
         </h1>
         
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-4">

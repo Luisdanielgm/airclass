@@ -65,6 +65,17 @@ const COURSES: Course[] = [
         path: '/courses/aircraft-valuation?section=aviation-legislation'
       }
     ]
+  },
+  {
+    id: 'air-transport-economy',
+    title: 'Economía del transporte aéreo',
+    sections: [
+      {
+        title: 'Introducción al Curso',
+        videoId: CLOUDINARY_VIDEOS.AIR_TRANSPORT_ECONOMY_1_1,
+        path: '/courses/air-transport-economy?section=introduction-course'
+      }
+    ]
   }
 ]
 
