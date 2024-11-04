@@ -110,6 +110,16 @@ const COURSES: Course[] = [
         title: 'Legislación Aeronáutica',
         videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_7,
         path: '/courses/aircraft-valuation?section=aviation-legislation'
+      },
+      {
+        title: 'Participantes Relevantes',
+        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_2_1,
+        path: '/courses/aircraft-valuation?section=participants-relevant'
+      },
+      {
+        title: 'Clasificación de Aeronaves',
+        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_2_2,
+        path: '/courses/aircraft-valuation?section=aircraft-classification'
       }
     ]
   },
