@@ -34,7 +34,7 @@ function HomeContent() {
             <div className="p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-blue-500/50 transition-colors duration-300">
               <h3 className="text-lg font-semibold mb-2 text-blue-400">Metodología Especializada</h3>
               <p className="text-slate-300">
-                Aprenda técnicas profesionales de valuación aplicables al mercado aeronáutico actual
+                Aprenda técnicas profesionales de valuación aplicables al mercado aeronáutico actual.
               </p>
             </div>
           </div>
