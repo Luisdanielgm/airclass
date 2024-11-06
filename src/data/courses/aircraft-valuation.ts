@@ -1,5 +1,5 @@
 import { CourseData } from '@/types';
-import { CLOUDINARY_VIDEOS } from '@/config/cloudinary';
+import { AIRCLASS_SERVER_VIDEOS } from '@/config/airclass_server';
 
 export const aircraftValuation: CourseData = {
   id: 'aircraft-valuation',
@@ -8,7 +8,7 @@ export const aircraftValuation: CourseData = {
     {
       id: 'introduction',
       title: 'Introducción al Curso',
-      videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_1,
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_1,
       path: '/courses/aircraft-valuation?section=introduction',
       data: [
         { time: 60, text: "Hola, ¿Qué tal? Muy buenas" },
@@ -236,7 +236,7 @@ export const aircraftValuation: CourseData = {
     {
       id: 'instructor-background',
       title: 'Antecedentes del Instructor',
-      videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_2,
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_2,
       path: '/courses/aircraft-valuation?section=instructor-background',
       data: [
         { time: 0, text: "una breve reseña de su servidor." },
@@ -322,7 +322,7 @@ export const aircraftValuation: CourseData = {
     {
       id: 'introduction-covbaero',
       title: 'Introducción a COVBAERO',
-      videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_3,
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_3,
       path: '/courses/aircraft-valuation?section=introduction-covbaero',
       data: [
         { time: 0, text: "que de todos modos si hay alguna duda o comentario podemos revisar cualquier punto." },
@@ -393,7 +393,7 @@ export const aircraftValuation: CourseData = {
     {
       id: 'participants-presentation-1',
       title: 'Presentación de los participantes 1',
-      videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_4,
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_4,
       path: '/courses/aircraft-valuation?section=participants-presentation-1',
       data: [
         { time: 0, text: "déjenme ver porque tengo un mensajito de alguien" },
@@ -598,7 +598,7 @@ export const aircraftValuation: CourseData = {
     {
       id: 'participants-presentation-2',
       title: 'Presentación de los participantes 2',
-      videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_5,
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_5,
       path: '/courses/aircraft-valuation?section=participants-presentation-2',
       data: [
         { time: 0, text: "Bien, adelante. Al menos que tengamos otras cinco participantes, estaría muy bien." },
@@ -754,7 +754,7 @@ export const aircraftValuation: CourseData = {
     {
       id: 'aviation-history',
       title: 'Hitos de la Aviación',
-      videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_6,
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_6,
       path: '/courses/aircraft-valuation?section=aviation-history',
       data: [
         { time: 0, text: "Vamos a hablar un poquito siempre en la parte de aeronáutica." },
@@ -881,7 +881,7 @@ export const aircraftValuation: CourseData = {
     {
       id: 'aviation-legislation',
       title: 'Legislación Aeronáutica',
-      videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_7,
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_7,
       path: '/courses/aircraft-valuation?section=aviation-legislation',
       data: [
         { time: 0, text: "realmente pues es una industria muy" },
@@ -1116,7 +1116,7 @@ export const aircraftValuation: CourseData = {
     {
       id: 'relevant-participants',
       title: 'Participantes Relevantes',
-      videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_2_1,
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_1,
       path: '/courses/aircraft-valuation?section=relevant-participants',
       data: [
         { time: 0, text: "Estimados participantes, pues estamos de regreso en la sesión de nuestro curso de valoración de aeronaves." },
@@ -1239,7 +1239,7 @@ export const aircraftValuation: CourseData = {
     {
       id: 'aircraft-classification',
       title: 'Clasificación de Aeronaves',
-      videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_2_2,
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_2,
       path: '/courses/aircraft-valuation?section=aircraft-classification',
       data: [
         { time: 0, text: "Como evaluadores, además de conocer que hay una legislación que va a afectar nuestros dictámenes, también conociendo los diferentes actores que son fabricantes, sobre todo de aeronaves, estamos enfocándonos en el tema de aviones." },

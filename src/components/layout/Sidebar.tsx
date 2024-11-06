@@ -9,12 +9,12 @@ import {
   LayoutDashboardIcon, 
   XIcon 
 } from '@/components/ui/iconos'
-import { CLOUDINARY_VIDEOS } from '@/config/cloudinary'
+import { AIRCLASS_SERVER_VIDEOS } from '@/config/airclass_server'
 
 // Tipos
 interface CourseSection {
   title: string
-  videoId: string
+  videoUrl: string
   path: string
 }
 
@@ -78,47 +78,47 @@ const COURSES: Course[] = [
     sections: [
       {
         title: 'Introducción al Curso',
-        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_1,
+        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_1,
         path: '/courses/aircraft-valuation?section=introduction'
       },
       {
         title: 'Biografía del ponente',
-        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_2,
+        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_2,
         path: '/courses/aircraft-valuation?section=instructor-background'
       },
       {
         title: 'Introducción a COVBAERO',
-        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_3,
+        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_3,
         path: '/courses/aircraft-valuation?section=introduction-covbaero'
       },
       {
         title: 'Presentación de los participantes 1',
-        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_4,
+        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_4,
         path: '/courses/aircraft-valuation?section=participants-presentation-1'
       },
       {
         title: 'Presentación de los participantes 2',
-        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_5,
+        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_5,
         path: '/courses/aircraft-valuation?section=participants-presentation-2'
       },
       {
         title: 'Hitos de la Aviación',
-        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_6,
+        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_6,
         path: '/courses/aircraft-valuation?section=aviation-history'
       },
       {
         title: 'Legislación Aeronáutica',
-        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_1_7,
+        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_7,
         path: '/courses/aircraft-valuation?section=aviation-legislation'
       },
       {
         title: 'Participantes Relevantes',
-        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_2_1,
+        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_1,
         path: '/courses/aircraft-valuation?section=participants-relevant'
       },
       {
         title: 'Clasificación de Aeronaves',
-        videoId: CLOUDINARY_VIDEOS.AIRCRAFT_VALUATION_2_2,
+        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_2,
         path: '/courses/aircraft-valuation?section=aircraft-classification'
       }
     ]
@@ -129,7 +129,7 @@ const COURSES: Course[] = [
     sections: [
       {
         title: 'Introducción al Curso',
-        videoId: CLOUDINARY_VIDEOS.AIR_TRANSPORT_ECONOMY_1_1,
+        videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_1,
         path: '/courses/air-transport-economy?section=introduction-course'
       }
     ]

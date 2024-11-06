@@ -1,7 +1,7 @@
 import type { TranscriptionItem } from '@/types'
 
 export interface BaseVideoPlayerProps {
-  videoId: string
+  videoUrl: string
   onTimeUpdate?: (currentTime: number) => void
   onPlay?: (isPlaying: boolean) => void
   onPause?: (isPlaying: boolean) => void

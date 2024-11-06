@@ -4,7 +4,7 @@ import { Suspense } from 'react'
 import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import CloudinaryVideoPlayer from '@/components/video-player/cloudinary'
+import AirclassVideoPlayer from '@/components/video-player/airclass'
 import { TranscriptionPanel } from '@/components/video-player/common/TranscriptionPanel'
 import { ChatComponent } from '@/components/chat/ChatComponent'
 import { aircraftValuation } from '@/data/courses/aircraft-valuation'
@@ -60,8 +60,8 @@ function AircraftValuationContent() {
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-4 h-[calc(100vh-120px)] overflow-hidden">
           <div className="lg:col-span-7 flex flex-col gap-4">
             <div className="bg-slate-900 p-4 rounded-lg border border-slate-800">
-              <CloudinaryVideoPlayer 
-                videoId={currentSection.videoId}
+              <AirclassVideoPlayer   
+                videoUrl={currentSection.videoUrl}
                 onTimeUpdate={setCurrentTime}
                 onTimeSelect={setCurrentTime}
               />
