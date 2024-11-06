@@ -114,7 +114,7 @@ const COURSES: Course[] = [
       {
         title: 'Participantes Relevantes',
         videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_1,
-        path: '/courses/aircraft-valuation?section=participants-relevant'
+        path: '/courses/aircraft-valuation?section=relevant-participants'
       },
       {
         title: 'Clasificación de Aeronaves',
