@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/videos/:path*",
+      "destination": "http://vps-4513947-x.dattaweb.com:3000/:path*"
+    }
+  ]
+} 
