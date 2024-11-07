@@ -3,6 +3,8 @@
 import React, { useRef, useCallback, useState, useEffect } from 'react'
 import type { AirclassVideoPlayerProps } from './types'
 
+const url_server = process.env.NEXT_PUBLIC_AIRCLASS_SERVER_URL as string
+
 export default function AirclassVideoPlayer({
   videoUrl,
   onTimeUpdate,
@@ -43,7 +45,7 @@ export default function AirclassVideoPlayer({
     }
   }, [onTimeSelect])
 
-  const fullVideoUrl = `/videos/${videoUrl}`
+  const fullVideoUrl = `${url_server}/${videoUrl}`
 
   return (
     <div className="relative w-full aspect-video">
