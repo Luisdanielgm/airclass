@@ -10,6 +10,7 @@ import {
   XIcon 
 } from '@/components/ui/iconos'
 import { AIRCLASS_SERVER_VIDEOS } from '@/config/airclass_server'
+import { usePathname } from 'next/navigation'
 
 // Tipos
 interface CourseSection {
@@ -259,8 +260,45 @@ const COURSES: Course[] = [
 // Componente principal del Sidebar
 export function Sidebar() {
   const [expandedCourse, setExpandedCourse] = useState<string | null>(null)
+  const [expandedGroup, setExpandedGroup] = useState<string | null>(null)
   const [isMobile, setIsMobile] = useState(false)
   const { isMobileMenuOpen, toggleMobileMenu } = useSidebar()
+  const pathname = usePathname()
+  const [currentSection, setCurrentSection] = useState<string | null>(null)
+
+  // Efecto para manejar la expansión inicial y actualización de sección
+  useEffect(() => {
+    const currentCourseId = pathname.split('/')[2]
+    if (currentCourseId) {
+      setExpandedCourse(currentCourseId)
+      
+      // Encontrar el grupo que contiene la sección actual
+      const searchParams = new URLSearchParams(window.location.search)
+      const currentSectionId = searchParams.get('section') || 'introduction'
+      
+      const course = COURSES.find(c => c.id === currentCourseId)
+      if (course) {
+        const groupIndex = course.groups.findIndex(group => 
+          group.sections.some(section => 
+            new URLSearchParams(section.path.split('?')[1]).get('section') === currentSectionId
+          )
+        )
+        if (groupIndex !== -1) {
+          setExpandedGroup(`${currentCourseId}-${groupIndex}`)
+        }
+      }
+      
+      setCurrentSection(currentSectionId)
+    }
+  }, [pathname])
+
+  // Función para manejar el clic en una sección
+  const handleSectionClick = (courseId: string, groupIndex: number, sectionPath: string) => {
+    setExpandedCourse(courseId)
+    setExpandedGroup(`${courseId}-${groupIndex}`)
+    const section = new URLSearchParams(sectionPath.split('?')[1]).get('section')
+    setCurrentSection(section)
+  }
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -322,22 +360,51 @@ export function Sidebar() {
                   </button>
                   {expandedCourse === course.id && (
                     <div className="bg-slate-950/50">
-                      {course.groups.map((group, index) => (
-                        <div key={index} className="py-2">
-                          <div className="px-4 py-2 text-sm font-medium text-blue-400 border-b border-slate-800">
-                            {group.title}
-                          </div>
-                          {group.sections.map((section) => (
-                            <Link
-                              key={section.path}
-                              href={section.path}
-                              className="block px-6 py-2.5 text-sm text-slate-400 hover:text-slate-200 hover:bg-slate-800/30 transition-all duration-200 ease-in-out"
+                      {course.groups.map((group, groupIndex) => {
+                        const groupId = `${course.id}-${groupIndex}`;
+                        return (
+                          <div key={groupIndex} className="py-2">
+                            <button
+                              onClick={() => setExpandedGroup(expandedGroup === groupId ? null : groupId)}
+                              className="w-full px-4 py-2 text-sm font-medium text-blue-400 border-b border-slate-800 flex justify-between items-center hover:bg-slate-800/30 text-left"
                             >
-                              {section.title}
-                            </Link>
-                          ))}
-                        </div>
-                      ))}
+                              <span className="flex-1 text-left">{group.title}</span>
+                              {expandedGroup === groupId ? (
+                                <ChevronDownIcon className="w-4 h-4 flex-shrink-0" />
+                              ) : (
+                                <ChevronRightIcon className="w-4 h-4 flex-shrink-0" />
+                              )}
+                            </button>
+                            {expandedGroup === groupId && (
+                              <div>
+                                {group.sections.map((section) => {
+                                  const isCurrentSection = () => {
+                                    if (pathname !== '/courses/' + course.id) return false;
+                                    const searchParams = new URLSearchParams(section.path.split('?')[1]);
+                                    const sectionParam = searchParams.get('section');
+                                    return sectionParam === (currentSection || 'introduction');
+                                  };
+                                  
+                                  return (
+                                    <Link
+                                      key={section.path}
+                                      href={section.path}
+                                      className={`block px-6 py-2.5 text-sm transition-all duration-200 ease-in-out ${
+                                        isCurrentSection()
+                                          ? 'bg-blue-500/20 text-blue-400'
+                                          : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/30'
+                                      }`}
+                                      onClick={() => handleSectionClick(course.id, groupIndex, section.path)}
+                                    >
+                                      {section.title}
+                                    </Link>
+                                  );
+                                })}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
