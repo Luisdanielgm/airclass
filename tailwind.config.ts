@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 import animate from "tailwindcss-animate";
 import typography from '@tailwindcss/typography';
+import scrollbar from 'tailwind-scrollbar';
 
 const config: Config = {
     darkMode: 'class',
@@ -41,9 +42,13 @@ const config: Config = {
             }
         },
     },
+    variants: {
+        scrollbar: ['rounded', 'dark']
+    },
     plugins: [
         animate,
         typography,
+        scrollbar({ nocompatible: true }),
     ],
 };
 

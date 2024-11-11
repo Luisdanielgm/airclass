@@ -244,13 +244,49 @@ const COURSES: Course[] = [
     title: 'Economía del transporte aéreo',
     groups: [
       {
-        title: 'Módulo 1: Fundamentos',
+        title: 'Introducción al Curso',
         sections: [
           {
             title: 'Introducción al Curso',
             videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_1,
             path: '/courses/air-transport-economy?section=introduction-course'
           }
+        ]
+      },
+      {
+        title: 'Módulo 1: Capacidad del Transportista Aéreo',
+        sections: [
+
+        ]
+      },
+      {
+        title: 'Módulo 2: Tarifas del Transportista Aéreo',
+        sections: [
+
+        ]
+      },
+      {
+        title: 'Módulo 3: Carga Aérea',
+        sections: [
+
+        ]
+      },
+      {
+        title: 'Módulo 4: Servicios Aéreos No Regulares',
+        sections: [
+
+        ]
+      },
+      {
+        title: 'Módulo 5: Actividades Comerciales y Cooperativas de Aerolíneas',
+        sections: [
+
+        ]
+      },
+      {
+        title: 'Módulo 6: Gestión Económica y Financiera de Aeropuertos',
+        sections: [
+
         ]
       }
     ]
@@ -333,7 +369,7 @@ export function Sidebar() {
             )}
           </div>
 
-          <nav className="flex-1 overflow-y-auto p-4">
+          <nav className="flex-1 overflow-y-auto scrollbar-thin scrollbar-track-slate-800 scrollbar-thumb-slate-600 hover:scrollbar-thumb-slate-500">
             <div className="space-y-3">
               <Link
                 href="/"

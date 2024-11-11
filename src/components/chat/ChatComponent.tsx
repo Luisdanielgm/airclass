@@ -97,11 +97,10 @@ export function ChatComponent({ transcriptionData }: ChatComponentProps) {
         </div>
       </CardHeader>
       
-      <CardContent className="flex-1 overflow-y-auto p-4 bg-white scrollbar-custom">
-        <ScrollArea className="h-[calc(100vh-400px)]" style={{
-          scrollbarWidth: 'thin',
-          scrollbarColor: '#94A3B8 #E2E8F0'
-        }}>
+      <CardContent className="flex-1 overflow-y-auto p-4 bg-white">
+        <ScrollArea 
+          className="h-[calc(100vh-400px)] scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-slate-300 hover:scrollbar-thumb-slate-400"
+        >
           <div className="space-y-4 pr-4">
             {messages.map((message) => (
               <div key={message.id} className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>

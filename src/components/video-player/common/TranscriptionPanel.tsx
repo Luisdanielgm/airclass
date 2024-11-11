@@ -46,6 +46,19 @@ export function TranscriptionPanel({
         height: '100%',
         maxHeight: 'calc(100vh - 200px)',
         overflow: 'auto',
+        '&::-webkit-scrollbar': {
+          width: '8px',
+        },
+        '&::-webkit-scrollbar-track': {
+          backgroundColor: '#1e293b', // slate-800
+        },
+        '&::-webkit-scrollbar-thumb': {
+          backgroundColor: '#475569', // slate-600
+          borderRadius: '4px',
+          '&:hover': {
+            backgroundColor: '#64748b', // slate-500
+          },
+        },
       }}
     >
       <Typography variant="h6" gutterBottom>
