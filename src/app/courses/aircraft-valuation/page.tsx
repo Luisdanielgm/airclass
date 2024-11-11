@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import AirclassVideoPlayer from '@/components/video-player/airclass'
 import { TranscriptionPanel } from '@/components/video-player/common/TranscriptionPanel'
 import { ChatComponent } from '@/components/chat/ChatComponent'
-import { aircraftValuation } from '@/data/courses/aircraft-valuation'
+import { aircraftValuation } from '@/data/courses'
 import Link from 'next/link'
 import { ChevronLeftIcon, ChevronRightIcon, MenuIcon } from '@/components/ui/iconos'
 import { useSidebar } from '@/components/layout/Sidebar'

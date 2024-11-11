@@ -1,0 +1,20 @@
+export const aircraftZones = [
+    { time: 0, text: "También dentro de las digamos de cómo podemos diferenciar las partes de las aeronaves existen las zonas" },
+    { time: 11, text: "Es muy común en la industria que se hable de zonas de las aeronaves y estas zonas se van a referir a diferentes partes de la aeronave" },
+    { time: 19, text: "Por ejemplo la zona 100 es el fuselaje inferior" },
+    { time: 28, text: "Aquí está marcado, es la zona 100. La zona 200 es el fuselaje superior de aquí para arriba, todo lo que está en naranjita" },
+    { time: 37, text: "Lo que está en amarillo, en la parte de abajo, es la zona 100." },
+    { time: 45, text: "Lo que está en la parte de arriba del fuselaje se llama zona 200." },
+    { time: 52, text: "En la zona 300 estamos hablando del empenaje. En la zona 300 el empenaje es todo este componente." },
+    { time: 82, text: "Y está ahí el, se habla de el cono de cola y el sustentador horizontal y vertical" },
+    { time: 97, text: "Y en la zona 400 estamos hablando de los motores las superficies o bueno los elementos que ayudan a soportar la góndola del motor" },
+    { time: 101, text: "Y la misma góndola del motor, esa es la zona 400." },
+    { time: 105, text: "En la zona 500 estamos hablando de la semiala izquierda." },
+    { time: 116, text: "La zona 600, la semiala derecha." },
+    { time: 120, text: "Y tenemos también la zona 700, la penúltima, donde tenemos a los trenes de aterrizaje y las puertas de los trenes de aterrizaje." },
+    { time: 134, text: "La zona 800 se refiere a las puertas de la aeronave." },
+    { time: 139, text: "Entonces están marcadas en morado." },
+    { time: 140, text: "Ok, entonces también cuando hagamos una inspección tenemos que revisar todas las zonas de la aeronave para que también lo tengan ustedes presente y que cuando tengan que realizar su walk around lo hagan correctamente con pues con toda la el recorrido de todas las zonas correspondientes." },
+    { time: 167, text: "Además de que se debe de inspeccionar los interiores de la aeronave." },
+    { time: 174, text: "Entonces estamos hablando de que por fuera así lo estamos viendo, pero también tenemos que hacer una inspección interna." }
+]; 

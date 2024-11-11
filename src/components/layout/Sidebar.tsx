@@ -18,10 +18,15 @@ interface CourseSection {
   path: string
 }
 
+interface CourseGroup {
+  title: string
+  sections: CourseSection[]
+}
+
 interface Course {
   id: string
   title: string
-  sections: CourseSection[]
+  groups: CourseGroup[]
 }
 
 interface SidebarContextType {
@@ -75,62 +80,177 @@ const COURSES: Course[] = [
   {
     id: 'aircraft-valuation',
     title: 'Valuación de Aeronaves',
-    sections: [
+    groups: [
       {
-        title: 'Introducción al Curso',
-        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_1,
-        path: '/courses/aircraft-valuation?section=introduction'
+        title: 'Módulo 1: Introducción',
+        sections: [
+          {
+            title: 'Introducción al Curso',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_1,
+            path: '/courses/aircraft-valuation?section=introduction'
+          },
+          {
+            title: 'Biografía del ponente',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_2,
+            path: '/courses/aircraft-valuation?section=instructor-background'
+          },
+          {
+            title: 'Introducción a COVBAERO',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_3,
+            path: '/courses/aircraft-valuation?section=introduction-covbaero'
+          },
+          {
+            title: 'Presentación de los participantes 1',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_4,
+            path: '/courses/aircraft-valuation?section=participants-presentation-1'
+          },
+          {
+            title: 'Presentación de los participantes 2',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_5,
+            path: '/courses/aircraft-valuation?section=participants-presentation-2'
+          },
+          {
+            title: 'Hitos de la Aviación',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_6,
+            path: '/courses/aircraft-valuation?section=aviation-history'
+          },
+          {
+            title: 'Legislación Aeronáutica',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_7,
+            path: '/courses/aircraft-valuation?section=aviation-legislation'
+          }
+        ]
       },
       {
-        title: 'Biografía del ponente',
-        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_2,
-        path: '/courses/aircraft-valuation?section=instructor-background'
+        title: 'Módulo 2: Aspectos Técnicos',
+        sections: [
+          {
+            title: 'Participantes Relevantes',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_1,
+            path: '/courses/aircraft-valuation?section=relevant-participants'
+          },
+          {
+            title: 'Clasificación de Aeronaves',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_2,
+            path: '/courses/aircraft-valuation?section=aircraft-classification'
+          },
+          {
+            title: 'Partes de Aeronaves',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_3,
+            path: '/courses/aircraft-valuation?section=aircraft-parts'
+          },
+          {
+            title: 'Superficies de Control Primarias',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_4,
+            path: '/courses/aircraft-valuation?section=primary-control-surfaces'
+          },
+          {
+            title: 'Superficies de Control Secundarias',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_5,
+            path: '/courses/aircraft-valuation?section=secondary-control-surfaces'
+          },
+          {
+            title: 'Zonas de Aeronaves',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_6,
+            path: '/courses/aircraft-valuation?section=aircraft-zones'
+          },
+          {
+            title: 'Inspección Walk Around',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_7,
+            path: '/courses/aircraft-valuation?section=inspection-walk-around'
+          }
+        ]
       },
       {
-        title: 'Introducción a COVBAERO',
-        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_3,
-        path: '/courses/aircraft-valuation?section=introduction-covbaero'
+        title: 'Módulo 3: Aspectos Técnicos',
+        sections: [
+          {
+            title: 'Tipos de Motores: Recíprocos',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_1,
+            path: '/courses/aircraft-valuation?section=reciproc-motors'
+          },
+          {
+            title: 'Tipos de Motores: Turbinas',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_2,
+            path: '/courses/aircraft-valuation?section=turbine-motors'
+          },
+          {
+            title: 'Mantenimiento Programado',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_3,
+            path: '/courses/aircraft-valuation?section=scheduled-maintenance'
+          },
+          {
+            title: 'Mantenimiento No Programado',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_4,
+            path: '/courses/aircraft-valuation?section=unscheduled-maintenance'
+          },
+          {
+            title: 'Conceptos de Valor',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_5,
+            path: '/courses/aircraft-valuation?section=value-concepts'
+          },
+          {
+            title: 'Enfoques Principales de Valoración',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_6,
+            path: '/courses/aircraft-valuation?section=valuation-approaches'
+          },
+          {
+            title: 'Valor de Reposición Nuevo y Valor Neto de Reposición',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_7,
+            path: '/courses/aircraft-valuation?section=replacement-value'
+          },
+          {
+            title: 'Conceptos de Depreciación',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_8,
+            path: '/courses/aircraft-valuation?section=depreciation-concepts'
+          },
+          {
+            title: 'Métodos de Cálculo de Depreciación Acumulada',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_9,
+            path: '/courses/aircraft-valuation?section=depreciation-methods'
+          }
+        ]
       },
       {
-        title: 'Presentación de los participantes 1',
-        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_4,
-        path: '/courses/aircraft-valuation?section=participants-presentation-1'
-      },
-      {
-        title: 'Presentación de los participantes 2',
-        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_5,
-        path: '/courses/aircraft-valuation?section=participants-presentation-2'
-      },
-      {
-        title: 'Hitos de la Aviación',
-        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_6,
-        path: '/courses/aircraft-valuation?section=aviation-history'
-      },
-      {
-        title: 'Legislación Aeronáutica',
-        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_7,
-        path: '/courses/aircraft-valuation?section=aviation-legislation'
-      },
-      {
-        title: 'Participantes Relevantes',
-        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_1,
-        path: '/courses/aircraft-valuation?section=relevant-participants'
-      },
-      {
-        title: 'Clasificación de Aeronaves',
-        videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_2,
-        path: '/courses/aircraft-valuation?section=aircraft-classification'
+        title: 'Módulo 4: Ejercicios',
+        sections: [
+          {
+            title: 'Presentación de los Ejercicios',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_4_1,
+            path: '/courses/aircraft-valuation?section=exercises-presentation'
+          },
+          {
+            title: 'Primera Parte del Ejercicio',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_4_2,
+            path: '/courses/aircraft-valuation?section=first-exercise-part'
+          },
+          {
+            title: 'Segunda Parte del Ejercicio',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_4_3,
+            path: '/courses/aircraft-valuation?section=second-exercise-part'
+          },
+          {
+            title: 'Tercera Parte del Ejercicio',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_4_4,
+            path: '/courses/aircraft-valuation?section=third-exercise-part'
+          }
+        ]
       }
     ]
   },
   {
     id: 'air-transport-economy',
     title: 'Economía del transporte aéreo',
-    sections: [
+    groups: [
       {
-        title: 'Introducción al Curso',
-        videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_1,
-        path: '/courses/air-transport-economy?section=introduction-course'
+        title: 'Módulo 1: Fundamentos',
+        sections: [
+          {
+            title: 'Introducción al Curso',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_1,
+            path: '/courses/air-transport-economy?section=introduction-course'
+          }
+        ]
       }
     ]
   }
@@ -201,15 +321,22 @@ export function Sidebar() {
                     )}
                   </button>
                   {expandedCourse === course.id && (
-                    <div className="bg-slate-950/50 py-2">
-                      {course.sections.map((section) => (
-                        <Link
-                          key={section.path}
-                          href={section.path}
-                          className="block px-6 py-2.5 text-sm text-slate-400 hover:text-slate-200 hover:bg-slate-800/30 transition-all duration-200 ease-in-out"
-                        >
-                          {section.title}
-                        </Link>
+                    <div className="bg-slate-950/50">
+                      {course.groups.map((group, index) => (
+                        <div key={index} className="py-2">
+                          <div className="px-4 py-2 text-sm font-medium text-blue-400 border-b border-slate-800">
+                            {group.title}
+                          </div>
+                          {group.sections.map((section) => (
+                            <Link
+                              key={section.path}
+                              href={section.path}
+                              className="block px-6 py-2.5 text-sm text-slate-400 hover:text-slate-200 hover:bg-slate-800/30 transition-all duration-200 ease-in-out"
+                            >
+                              {section.title}
+                            </Link>
+                          ))}
+                        </div>
                       ))}
                     </div>
                   )}
