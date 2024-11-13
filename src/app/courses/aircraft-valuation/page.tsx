@@ -11,6 +11,7 @@ import { aircraftValuation } from '@/data/courses'
 import Link from 'next/link'
 import { ChevronLeftIcon, ChevronRightIcon, MenuIcon } from '@/components/ui/iconos'
 import { useSidebar } from '@/components/layout/Sidebar'
+import Footer from '@/components/layout/Footer'
 
 export default function AircraftValuationPage() {
   return (
@@ -43,8 +44,8 @@ function AircraftValuationContent() {
     : null
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200">
-      <div className="p-4">
+    <div className="min-h-screen bg-slate-950 text-slate-200 flex flex-col">
+      <div className="flex-1 p-4">
         <div className="flex items-center gap-4 mb-6">
           <button
             onClick={toggleMobileMenu}
@@ -133,6 +134,7 @@ function AircraftValuationContent() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 } 
