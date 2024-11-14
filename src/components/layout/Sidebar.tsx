@@ -240,6 +240,53 @@ const COURSES: Course[] = [
     ]
   },
   {
+    id: 'aircraft-valuation-2',
+    title: 'Valuación de Aeronaves 2da Parte',
+    groups: [
+      {
+        title: 'Saludos y Registro de Asistencia',
+        sections: [
+        ]
+      },
+      {
+        title: 'Introducción y Presentación del Primer Ejercicio',
+        sections: [
+
+        ]
+      },
+      {
+        title: 'Explicación del Primer Caso: Valoración de Motores',
+        sections: [
+
+        ]
+      },
+      {
+        title: 'Introducción al Segundo Caso',
+        sections: [
+
+        ]
+      },
+      {
+        title: 'Explicación del Segundo Caso',
+        sections: [
+
+        ]
+      },
+      {
+        title: 'Explicación del Método Multi-Criterio',
+        sections: [
+
+        ]
+      },
+      {
+        title: 'Cierre y Despedida',
+        sections: [
+
+        ]
+      }
+    ]
+  },
+  {
     id: 'air-transport-economy',
     title: 'Economía del transporte aéreo',
     groups: [
