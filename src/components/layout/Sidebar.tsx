@@ -246,12 +246,21 @@ const COURSES: Course[] = [
       {
         title: 'Saludos y Registro de Asistencia',
         sections: [
+          {
+            title: 'Saludos y Registro de Asistencia',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_1,
+            path: '/courses/aircraft-valuation-2?section=greetings-and-attendance-registration'
+          }
         ]
       },
       {
         title: 'Introducción y Presentación del Primer Ejercicio',
         sections: [
-
+          {
+            title: 'Introducción y Presentación del Primer Ejercicio',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_2,
+            path: '/courses/aircraft-valuation-2?section=introduction-and-presentation-of-the-first-exercise'
+          }
         ]
       },
       {
