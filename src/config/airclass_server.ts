@@ -32,7 +32,26 @@ export const AIRCLASS_SERVER_VIDEOS = {
   AIRCRAFT_VALUATION_4_4: 'cursos/valuacion_de_aeronaves/4_4_tercera_parte_ejercicio.mp4',
   // Valuación de aeronaves 5ta parte
   AIRCRAFT_VALUATION_5_1: 'cursos/valuacion_de_aeronaves/5_1_saludo_registro_asistencia.mp4',
-  AIRCRAFT_VALUATION_5_2: 'cursos/valuacion_de_aeronaves/5_2_introduccion_presentacion_primer_ejercicio.mp4',
+  AIRCRAFT_VALUATION_5_2: 'cursos/valuacion_de_aeronaves/5_2_introduccion_presentacion_primer_caso.mp4',
+  AIRCRAFT_VALUATION_5_3: 'cursos/valuacion_de_aeronaves/5_3_primer_caso_1.mp4',
+  AIRCRAFT_VALUATION_5_4: 'cursos/valuacion_de_aeronaves/5_4_primer_caso_2.mp4',
+  AIRCRAFT_VALUATION_5_5: 'cursos/valuacion_de_aeronaves/5_5_primer_caso_3.mp4',
+  AIRCRAFT_VALUATION_5_6: 'cursos/valuacion_de_aeronaves/5_6_primer_caso_4.mp4',
+  AIRCRAFT_VALUATION_5_7: 'cursos/valuacion_de_aeronaves/5_7_presentacion_segundo_caso.mp4',
+  AIRCRAFT_VALUATION_5_8: 'cursos/valuacion_de_aeronaves/5_8_segundo_caso_1.mp4',
+  AIRCRAFT_VALUATION_5_9: 'cursos/valuacion_de_aeronaves/5_9_segundo_caso_2.mp4',
+  AIRCRAFT_VALUATION_5_10: 'cursos/valuacion_de_aeronaves/5_10_segundo_caso_3.mp4',
+  AIRCRAFT_VALUATION_5_11: 'cursos/valuacion_de_aeronaves/5_11_segundo_caso_4.mp4',
+  AIRCRAFT_VALUATION_5_12: 'cursos/valuacion_de_aeronaves/5_12_segundo_caso_5.mp4',
+  AIRCRAFT_VALUATION_5_13: 'cursos/valuacion_de_aeronaves/5_13_metodo_multi_criterio.mp4',
+  AIRCRAFT_VALUATION_5_14: 'cursos/valuacion_de_aeronaves/5_14_cierre_despedida.mp4',
   // Economía del transporte aéreo
-  AIR_TRANSPORT_ECONOMY_1_1: 'cursos/economia_del_transporte_aereo/1_1_introduction_course.mp4'
+  // INTRODUCCIÓN
+  AIR_TRANSPORT_ECONOMY_0_1: 'cursos/economia_del_transporte_aereo/introduction/1_1_introduction_course.mp4',
+  // Modulo 1
+  AIR_TRANSPORT_ECONOMY_1_1: 'cursos/economia_del_transporte_aereo/modulo_1/1_1_course_map.mp4',
+  AIR_TRANSPORT_ECONOMY_1_2: 'cursos/economia_del_transporte_aereo/modulo_1/1_2_module_objectives.mp4',
+  AIR_TRANSPORT_ECONOMY_1_3: 'cursos/economia_del_transporte_aereo/modulo_1/1_3_modules_resources.mp4',
+  AIR_TRANSPORT_ECONOMY_1_4: 'cursos/economia_del_transporte_aereo/modulo_1/1_4_capacity_regulated_by_gobernments.mp4',
+  AIR_TRANSPORT_ECONOMY_1_5: 'cursos/economia_del_transporte_aereo/modulo_1/1_5_principles_behind_capacity_regulation_by_gobernments.mp4',
 } as const

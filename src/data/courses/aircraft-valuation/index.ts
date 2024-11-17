@@ -27,6 +27,20 @@ import { exercisesPresentation } from './subtitles/exercises-presentation';
 import { firstExercisePart } from './subtitles/first-exercise-part';
 import { secondExercisePart } from './subtitles/second-exercise-part';
 import { thirdExercisePart } from './subtitles/third-exercise-part';
+import { greetingsAndAttendanceRegistration } from './subtitles/greetings-and-attendance-registration';
+import { introductionPresentationFirstCase } from './subtitles/introduction-presentation-first-case';
+import { firstCasePart1 } from './subtitles/first-case-part-1';
+import { firstCasePart2 } from './subtitles/first-case-part-2';
+import { firstCasePart3 } from './subtitles/first-case-part-3';
+import { firstCasePart4 } from './subtitles/first-case-part-4';
+import { introductionToTheSecondCase } from './subtitles/introduction-to-the-second-case';
+import { explanationOfTheSecondCase1 } from './subtitles/explanation-of-the-second-case-1';
+import { explanationOfTheSecondCase2 } from './subtitles/explanation-of-the-second-case-2';
+import { explanationOfTheSecondCase3 } from './subtitles/explanation-of-the-second-case-3';
+import { explanationOfTheSecondCase4 } from './subtitles/explanation-of-the-second-case-4';
+import { explanationOfTheSecondCase5 } from './subtitles/explanation-of-the-second-case-5';
+import { multiCriteriaMethod } from './subtitles/multi-criteria-method';
+import { closingFarewell } from './subtitles/closing-farewell';
 
 export const aircraftValuation: CourseData = {
   id: 'aircraft-valuation',
@@ -220,6 +234,104 @@ export const aircraftValuation: CourseData = {
       videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_4_4,
       path: '/courses/aircraft-valuation?section=third-exercise-part',
       data: thirdExercisePart
+    },
+    {
+      id: 'greetings-and-attendance-registration',
+      title: 'Saludos y Registro de Asistencia',
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_1,
+      path: '/courses/aircraft-valuation?section=greetings-and-attendance-registration',
+      data: greetingsAndAttendanceRegistration
+    },
+    {
+      id: 'introduction-and-presentation-of-the-first-case',
+      title: 'Introducción y Presentación del Primer Caso',
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_2,
+      path: '/courses/aircraft-valuation?section=introduction-and-presentation-of-the-first-case',
+      data: introductionPresentationFirstCase
+    },
+    {
+      id: 'explanation-of-the-first-case',
+      title: 'Primera Parte del Primer Caso',
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_3,
+      path: '/courses/aircraft-valuation?section=explanation-of-the-first-case',
+      data: firstCasePart1
+    },
+    {
+      id: 'explanation-of-the-first-case-2',
+      title: 'Segunda Parte del Primer Caso',
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_4,
+      path: '/courses/aircraft-valuation?section=explanation-of-the-first-case-2',
+      data: firstCasePart2
+    },
+    {
+      id: 'explanation-of-the-first-case-3',
+      title: 'Tercera Parte del Primer Caso',
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_5,
+      path: '/courses/aircraft-valuation?section=explanation-of-the-first-case-3',
+      data: firstCasePart3
+    },
+    {
+      id: 'explanation-of-the-first-case-4',
+      title: 'Cuarta Parte del Primer Caso',
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_6,
+      path: '/courses/aircraft-valuation?section=explanation-of-the-first-case-4',
+      data: firstCasePart4
+    },
+    {
+      id: 'introduction-to-the-second-case',
+      title: 'Quinta Parte del Primer Caso',
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_7,
+      path: '/courses/aircraft-valuation?section=introduction-to-the-second-case',
+      data: introductionToTheSecondCase
+    },
+    {
+      id: 'explanation-of-the-second-case-1',
+      title: 'Primera Parte del Segundo Caso',
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_8,
+      path: '/courses/aircraft-valuation?section=explanation-of-the-second-case-1',
+      data: explanationOfTheSecondCase1
+    },
+    {
+      id: 'explanation-of-the-second-case-2',
+      title: 'Segunda Parte del Segundo Caso',
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_9,
+      path: '/courses/aircraft-valuation?section=explanation-of-the-second-case-2',
+      data: explanationOfTheSecondCase2
+    },
+    {
+      id: 'explanation-of-the-second-case-3',
+      title: 'Tercera Parte del Segundo Caso',
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_10,
+      path: '/courses/aircraft-valuation?section=explanation-of-the-second-case-3',
+      data: explanationOfTheSecondCase3
+    },
+    {
+      id: 'explanation-of-the-second-case-4',
+      title: 'Cuarta Parte del Segundo Caso',
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_11,
+      path: '/courses/aircraft-valuation?section=explanation-of-the-second-case-4',
+      data: explanationOfTheSecondCase4
+    },
+    {
+      id: 'explanation-of-the-second-case-5',
+      title: 'Quinta Parte del Segundo Caso',
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_12,
+      path: '/courses/aircraft-valuation?section=explanation-of-the-second-case-5',
+      data: explanationOfTheSecondCase5
+    },
+    {
+      id: 'multi-criteria-method',
+      title: 'Método de Multi Criterio',
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_13,
+      path: '/courses/aircraft-valuation?section=multi-criteria-method',
+      data: multiCriteriaMethod
+    },
+    {
+      id: 'closing-and-farewell',
+      title: 'Cierre y Despedida',
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_14,
+      path: '/courses/aircraft-valuation?section=closing-and-farewell',
+      data: closingFarewell
     }
   ]
 }; 

@@ -249,48 +249,93 @@ const COURSES: Course[] = [
           {
             title: 'Saludos y Registro de Asistencia',
             videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_1,
-            path: '/courses/aircraft-valuation-2?section=greetings-and-attendance-registration'
+            path: '/courses/aircraft-valuation?section=greetings-and-attendance-registration'
           }
         ]
       },
       {
-        title: 'Introducción y Presentación del Primer Ejercicio',
+        title: 'Explicación del Primer Caso',
         sections: [
           {
             title: 'Introducción y Presentación del Primer Ejercicio',
             videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_2,
-            path: '/courses/aircraft-valuation-2?section=introduction-and-presentation-of-the-first-exercise'
+            path: '/courses/aircraft-valuation?section=introduction-and-presentation-of-the-first-case'
+          },
+          {
+            title: 'Explicación del Primer Caso 1',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_3,
+            path: '/courses/aircraft-valuation?section=explanation-of-the-first-case'
+          },
+          {
+            title: 'Explicación del Primer Caso 2',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_4,
+            path: '/courses/aircraft-valuation?section=explanation-of-the-first-case-2'
+          },
+          {
+            title: 'Explicación del Primer Caso 3',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_5,
+            path: '/courses/aircraft-valuation?section=explanation-of-the-first-case-3'
+          },
+          {
+            title: 'Explicación del Primer Caso 4',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_6,
+            path: '/courses/aircraft-valuation?section=explanation-of-the-first-case-4'
           }
-        ]
-      },
-      {
-        title: 'Explicación del Primer Caso: Valoración de Motores',
-        sections: [
-
-        ]
-      },
-      {
-        title: 'Introducción al Segundo Caso',
-        sections: [
-
         ]
       },
       {
         title: 'Explicación del Segundo Caso',
         sections: [
-
+          {
+            title: 'Introducción al Segundo Caso',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_7,
+            path: '/courses/aircraft-valuation?section=introduction-to-the-second-case'
+          },
+          {
+            title: 'Explicación del Segundo Caso 1',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_8,
+            path: '/courses/aircraft-valuation?section=explanation-of-the-second-case-1'
+          },
+          {
+            title: 'Explicación del Segundo Caso 2',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_9,
+            path: '/courses/aircraft-valuation?section=explanation-of-the-second-case-2'
+          },
+          {
+            title: 'Explicación del Segundo Caso 3',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_10,
+            path: '/courses/aircraft-valuation?section=explanation-of-the-second-case-3'
+          },
+          {
+            title: 'Explicación del Segundo Caso 4',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_11,
+            path: '/courses/aircraft-valuation?section=explanation-of-the-second-case-4'
+          },
+          {
+            title: 'Explicación del Segundo Caso 5',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_12,
+            path: '/courses/aircraft-valuation?section=explanation-of-the-second-case-5'
+          }
         ]
       },
       {
         title: 'Explicación del Método Multi-Criterio',
         sections: [
-
+          {
+            title: 'Explicación del Método Multi-Criterio',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_13,
+            path: '/courses/aircraft-valuation?section=multi-criteria-method'
+          }
         ]
       },
       {
         title: 'Cierre y Despedida',
         sections: [
-
+          {
+            title: 'Cierre y Despedida',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_14,
+            path: '/courses/aircraft-valuation?section=closing-and-farewell'
+          }
         ]
       }
     ]
@@ -304,7 +349,7 @@ const COURSES: Course[] = [
         sections: [
           {
             title: 'Introducción al Curso',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_1,
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_0_1,
             path: '/courses/air-transport-economy?section=introduction-course'
           }
         ]
@@ -312,7 +357,31 @@ const COURSES: Course[] = [
       {
         title: 'Módulo 1: Capacidad del Transportista Aéreo',
         sections: [
-
+          {
+            title: 'Mapa del curso módulo 1',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_1,
+            path: '/courses/air-transport-economy?section=course-map-module-1'
+          },
+          {
+            title: 'Objetivos del módulo 1',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_2,
+            path: '/courses/air-transport-economy?section=objectives-module-1'
+          },
+          {
+            title: 'Recursos del módulo 1',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_3,
+            path: '/courses/air-transport-economy?section=resources-module-1'
+          },
+          {
+            title: 'Capacidad regulada por los gobiernos',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_4,
+            path: '/courses/air-transport-economy?section=capacity-regulated-by-governments'
+          },
+          {
+            title: 'Principios detrás de la regulación de capacidad por parte de los gobiernos',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_5,
+            path: '/courses/air-transport-economy?section=principles-behind-capacity-regulation-by-governments'
+          }
         ]
       },
       {
