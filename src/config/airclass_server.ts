@@ -30,6 +30,9 @@ export const AIRCLASS_SERVER_VIDEOS = {
   AIRCRAFT_VALUATION_4_2: 'cursos/valuacion_de_aeronaves/4_2_primera_parte_ejercicio.mp4',
   AIRCRAFT_VALUATION_4_3: 'cursos/valuacion_de_aeronaves/4_3_segunda_parte_ejercicio.mp4',
   AIRCRAFT_VALUATION_4_4: 'cursos/valuacion_de_aeronaves/4_4_tercera_parte_ejercicio.mp4',
+  // Valuación de aeronaves 5ta parte
+  AIRCRAFT_VALUATION_5_1: 'cursos/valuacion_de_aeronaves/5_1_saludo_registro_asistencia.mp4',
+  AIRCRAFT_VALUATION_5_2: 'cursos/valuacion_de_aeronaves/5_2_introduccion_presentacion_primer_ejercicio.mp4',
   // Economía del transporte aéreo
   AIR_TRANSPORT_ECONOMY_1_1: 'cursos/economia_del_transporte_aereo/1_1_introduction_course.mp4'
 } as const
