@@ -12,8 +12,13 @@ export interface CourseSection {
   data: TranscriptionItem[]
 }
 
+export interface CourseGroup {
+  title: string
+  sections: CourseSection[]
+}
+
 export interface CourseData {
   id: string
   title: string
-  sections: CourseSection[]
+  groups: CourseGroup[]
 } 

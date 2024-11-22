@@ -27,20 +27,22 @@ function AircraftValuationContent() {
   const sectionId = searchParams.get('section') || 'introduction'
   const { toggleMobileMenu } = useSidebar()
   
-  const currentSection = aircraftValuation.sections.find(
+  const allSections = aircraftValuation.groups.flatMap(group => group.sections)
+  
+  const currentSection = allSections.find(
     section => section.id === sectionId
-  ) || aircraftValuation.sections[0]
+  ) || allSections[0]
 
-  const currentSectionIndex = aircraftValuation.sections.findIndex(
+  const currentSectionIndex = allSections.findIndex(
     section => section.id === sectionId
   )
 
   const previousSection = currentSectionIndex > 0 
-    ? aircraftValuation.sections[currentSectionIndex - 1]
+    ? allSections[currentSectionIndex - 1]
     : null
 
-  const nextSection = currentSectionIndex < aircraftValuation.sections.length - 1
-    ? aircraftValuation.sections[currentSectionIndex + 1]
+  const nextSection = currentSectionIndex < allSections.length - 1
+    ? allSections[currentSectionIndex + 1]
     : null
 
   return (

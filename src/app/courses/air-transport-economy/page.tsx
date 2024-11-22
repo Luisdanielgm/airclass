@@ -27,20 +27,22 @@ function AirTransportEconomyContent() {
   const sectionId = searchParams.get('section') || 'introduction-course'
   const { toggleMobileMenu } = useSidebar()
   
-  const currentSection = airTransportEconomy.sections.find(
+  const allSections = airTransportEconomy.groups.flatMap(group => group.sections)
+  
+  const currentSection = allSections.find(
     section => section.id === sectionId
-  ) || airTransportEconomy.sections[0]
+  ) || allSections[0]
 
-  const currentSectionIndex = airTransportEconomy.sections.findIndex(
+  const currentSectionIndex = allSections.findIndex(
     section => section.id === sectionId
   )
 
   const previousSection = currentSectionIndex > 0 
-    ? airTransportEconomy.sections[currentSectionIndex - 1]
+    ? allSections[currentSectionIndex - 1]
     : null
 
-  const nextSection = currentSectionIndex < airTransportEconomy.sections.length - 1
-    ? airTransportEconomy.sections[currentSectionIndex + 1]
+  const nextSection = currentSectionIndex < allSections.length - 1
+    ? allSections[currentSectionIndex + 1]
     : null
 
   return (

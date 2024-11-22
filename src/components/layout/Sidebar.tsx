@@ -2,33 +2,12 @@
 
 import { useState, useEffect, createContext, useContext, ReactNode } from 'react'
 import Link from 'next/link'
-import { 
-  MenuIcon, 
-  ChevronDownIcon, 
-  ChevronRightIcon, 
-  LayoutDashboardIcon, 
-  XIcon 
+import { MenuIcon, ChevronDownIcon, ChevronRightIcon, LayoutDashboardIcon, XIcon 
 } from '@/components/ui/iconos'
-import { AIRCLASS_SERVER_VIDEOS } from '@/config/airclass_server'
 import { usePathname } from 'next/navigation'
-
-// Tipos
-interface CourseSection {
-  title: string
-  videoUrl: string
-  path: string
-}
-
-interface CourseGroup {
-  title: string
-  sections: CourseSection[]
-}
-
-interface Course {
-  id: string
-  title: string
-  groups: CourseGroup[]
-}
+import { aircraftValuation } from '@/data/courses/aircraft-valuation'
+import { aircraftValuation2 } from '@/data/courses/aircraft-valuation-2'
+import { airTransportEconomy } from '@/data/courses/air-transport-economy'
 
 interface SidebarContextType {
   isMobileMenuOpen: boolean
@@ -76,352 +55,8 @@ export function SidebarTrigger() {
   )
 }
 
-// Datos de los cursos
-const COURSES: Course[] = [
-  {
-    id: 'aircraft-valuation',
-    title: 'Valuación de Aeronaves',
-    groups: [
-      {
-        title: 'Módulo 1: Introducción',
-        sections: [
-          {
-            title: 'Introducción al Curso',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_1,
-            path: '/courses/aircraft-valuation?section=introduction'
-          },
-          {
-            title: 'Biografía del ponente',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_2,
-            path: '/courses/aircraft-valuation?section=instructor-background'
-          },
-          {
-            title: 'Introducción a COVBAERO',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_3,
-            path: '/courses/aircraft-valuation?section=introduction-covbaero'
-          },
-          {
-            title: 'Presentación de los participantes 1',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_4,
-            path: '/courses/aircraft-valuation?section=participants-presentation-1'
-          },
-          {
-            title: 'Presentación de los participantes 2',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_5,
-            path: '/courses/aircraft-valuation?section=participants-presentation-2'
-          },
-          {
-            title: 'Hitos de la Aviación',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_6,
-            path: '/courses/aircraft-valuation?section=aviation-history'
-          },
-          {
-            title: 'Legislación Aeronáutica',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_1_7,
-            path: '/courses/aircraft-valuation?section=aviation-legislation'
-          }
-        ]
-      },
-      {
-        title: 'Módulo 2: Aspectos Técnicos',
-        sections: [
-          {
-            title: 'Participantes Relevantes',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_1,
-            path: '/courses/aircraft-valuation?section=relevant-participants'
-          },
-          {
-            title: 'Clasificación de Aeronaves',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_2,
-            path: '/courses/aircraft-valuation?section=aircraft-classification'
-          },
-          {
-            title: 'Partes de Aeronaves',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_3,
-            path: '/courses/aircraft-valuation?section=aircraft-parts'
-          },
-          {
-            title: 'Superficies de Control Primarias',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_4,
-            path: '/courses/aircraft-valuation?section=primary-control-surfaces'
-          },
-          {
-            title: 'Superficies de Control Secundarias',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_5,
-            path: '/courses/aircraft-valuation?section=secondary-control-surfaces'
-          },
-          {
-            title: 'Zonas de Aeronaves',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_6,
-            path: '/courses/aircraft-valuation?section=aircraft-zones'
-          },
-          {
-            title: 'Inspección Walk Around',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_2_7,
-            path: '/courses/aircraft-valuation?section=inspection-walk-around'
-          }
-        ]
-      },
-      {
-        title: 'Módulo 3: Aspectos Técnicos',
-        sections: [
-          {
-            title: 'Tipos de Motores: Recíprocos',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_1,
-            path: '/courses/aircraft-valuation?section=reciproc-motors'
-          },
-          {
-            title: 'Tipos de Motores: Turbinas',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_2,
-            path: '/courses/aircraft-valuation?section=turbine-motors'
-          },
-          {
-            title: 'Mantenimiento Programado',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_3,
-            path: '/courses/aircraft-valuation?section=scheduled-maintenance'
-          },
-          {
-            title: 'Mantenimiento No Programado',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_4,
-            path: '/courses/aircraft-valuation?section=unscheduled-maintenance'
-          },
-          {
-            title: 'Conceptos de Valor',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_5,
-            path: '/courses/aircraft-valuation?section=value-concepts'
-          },
-          {
-            title: 'Enfoques Principales de Valoración',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_6,
-            path: '/courses/aircraft-valuation?section=valuation-approaches'
-          },
-          {
-            title: 'Valor de Reposición Nuevo y Valor Neto de Reposición',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_7,
-            path: '/courses/aircraft-valuation?section=replacement-value'
-          },
-          {
-            title: 'Conceptos de Depreciación',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_8,
-            path: '/courses/aircraft-valuation?section=depreciation-concepts'
-          },
-          {
-            title: 'Métodos de Cálculo de Depreciación Acumulada',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_3_9,
-            path: '/courses/aircraft-valuation?section=depreciation-methods'
-          }
-        ]
-      },
-      {
-        title: 'Módulo 4: Ejercicios',
-        sections: [
-          {
-            title: 'Presentación de los Ejercicios',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_4_1,
-            path: '/courses/aircraft-valuation?section=exercises-presentation'
-          },
-          {
-            title: 'Primera Parte del Ejercicio',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_4_2,
-            path: '/courses/aircraft-valuation?section=first-exercise-part'
-          },
-          {
-            title: 'Segunda Parte del Ejercicio',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_4_3,
-            path: '/courses/aircraft-valuation?section=second-exercise-part'
-          },
-          {
-            title: 'Tercera Parte del Ejercicio',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_4_4,
-            path: '/courses/aircraft-valuation?section=third-exercise-part'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 'aircraft-valuation-2',
-    title: 'Valuación de Aeronaves 2da Parte',
-    groups: [
-      {
-        title: 'Saludos y Registro de Asistencia',
-        sections: [
-          {
-            title: 'Saludos y Registro de Asistencia',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_1,
-            path: '/courses/aircraft-valuation?section=greetings-and-attendance-registration'
-          }
-        ]
-      },
-      {
-        title: 'Explicación del Primer Caso',
-        sections: [
-          {
-            title: 'Introducción y Presentación del Primer Ejercicio',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_2,
-            path: '/courses/aircraft-valuation?section=introduction-and-presentation-of-the-first-case'
-          },
-          {
-            title: 'Explicación del Primer Caso 1',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_3,
-            path: '/courses/aircraft-valuation?section=explanation-of-the-first-case'
-          },
-          {
-            title: 'Explicación del Primer Caso 2',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_4,
-            path: '/courses/aircraft-valuation?section=explanation-of-the-first-case-2'
-          },
-          {
-            title: 'Explicación del Primer Caso 3',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_5,
-            path: '/courses/aircraft-valuation?section=explanation-of-the-first-case-3'
-          },
-          {
-            title: 'Explicación del Primer Caso 4',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_6,
-            path: '/courses/aircraft-valuation?section=explanation-of-the-first-case-4'
-          }
-        ]
-      },
-      {
-        title: 'Explicación del Segundo Caso',
-        sections: [
-          {
-            title: 'Introducción al Segundo Caso',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_7,
-            path: '/courses/aircraft-valuation?section=introduction-to-the-second-case'
-          },
-          {
-            title: 'Explicación del Segundo Caso 1',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_8,
-            path: '/courses/aircraft-valuation?section=explanation-of-the-second-case-1'
-          },
-          {
-            title: 'Explicación del Segundo Caso 2',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_9,
-            path: '/courses/aircraft-valuation?section=explanation-of-the-second-case-2'
-          },
-          {
-            title: 'Explicación del Segundo Caso 3',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_10,
-            path: '/courses/aircraft-valuation?section=explanation-of-the-second-case-3'
-          },
-          {
-            title: 'Explicación del Segundo Caso 4',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_11,
-            path: '/courses/aircraft-valuation?section=explanation-of-the-second-case-4'
-          },
-          {
-            title: 'Explicación del Segundo Caso 5',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_12,
-            path: '/courses/aircraft-valuation?section=explanation-of-the-second-case-5'
-          }
-        ]
-      },
-      {
-        title: 'Explicación del Método Multi-Criterio',
-        sections: [
-          {
-            title: 'Explicación del Método Multi-Criterio',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_13,
-            path: '/courses/aircraft-valuation?section=multi-criteria-method'
-          }
-        ]
-      },
-      {
-        title: 'Cierre y Despedida',
-        sections: [
-          {
-            title: 'Cierre y Despedida',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIRCRAFT_VALUATION_5_14,
-            path: '/courses/aircraft-valuation?section=closing-and-farewell'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 'air-transport-economy',
-    title: 'Economía del transporte aéreo',
-    groups: [
-      {
-        title: 'Introducción al Curso',
-        sections: [
-          {
-            title: 'Introducción al Curso',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_0_1,
-            path: '/courses/air-transport-economy?section=introduction-course'
-          }
-        ]
-      },
-      {
-        title: 'Módulo 1: Capacidad del Transportista Aéreo',
-        sections: [
-          {
-            title: 'Mapa del curso módulo 1',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_1,
-            path: '/courses/air-transport-economy?section=course-map-module-1'
-          },
-          {
-            title: 'Objetivos del módulo 1',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_2,
-            path: '/courses/air-transport-economy?section=objectives-module-1'
-          },
-          {
-            title: 'Recursos del módulo 1',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_3,
-            path: '/courses/air-transport-economy?section=resources-module-1'
-          },
-          {
-            title: 'Capacidad regulada por los gobiernos',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_4,
-            path: '/courses/air-transport-economy?section=capacity-regulated-by-governments'
-          },
-          {
-            title: 'Principios detrás de la regulación de capacidad por parte de los gobiernos',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_5,
-            path: '/courses/air-transport-economy?section=principles-behind-capacity-regulation-by-governments'
-          },
-          {
-            title: 'Capacidad desde la Perspectiva del Gobierno',
-            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_6,
-            path: '/courses/air-transport-economy?section=capacity-from-the-perspective-of-government'
-          }
-        ]
-      },
-      {
-        title: 'Módulo 2: Tarifas del Transportista Aéreo',
-        sections: [
-
-        ]
-      },
-      {
-        title: 'Módulo 3: Carga Aérea',
-        sections: [
-
-        ]
-      },
-      {
-        title: 'Módulo 4: Servicios Aéreos No Regulares',
-        sections: [
-
-        ]
-      },
-      {
-        title: 'Módulo 5: Actividades Comerciales y Cooperativas de Aerolíneas',
-        sections: [
-
-        ]
-      },
-      {
-        title: 'Módulo 6: Gestión Económica y Financiera de Aeropuertos',
-        sections: [
-
-        ]
-      }
-    ]
-  }
-]
+// Obtenemos los cursos directamente de los archivos de datos
+const COURSES = [aircraftValuation, aircraftValuation2, airTransportEconomy]
 
 // Componente principal del Sidebar
 export function Sidebar() {
@@ -543,7 +178,7 @@ export function Sidebar() {
                             </button>
                             {expandedGroup === groupId && (
                               <div>
-                                {group.sections.map((section) => {
+                                {group.sections.map((section, sectionIndex) => {
                                   const isCurrentSection = () => {
                                     if (pathname !== '/courses/' + course.id) return false;
                                     const searchParams = new URLSearchParams(section.path.split('?')[1]);
@@ -553,7 +188,7 @@ export function Sidebar() {
                                   
                                   return (
                                     <Link
-                                      key={section.path}
+                                      key={section.id}
                                       href={section.path}
                                       className={`block px-6 py-2.5 text-sm transition-all duration-200 ease-in-out ${
                                         isCurrentSection()
@@ -562,6 +197,7 @@ export function Sidebar() {
                                       }`}
                                       onClick={() => handleSectionClick(course.id, groupIndex, section.path)}
                                     >
+                                      <span className="inline-block w-4 text-blue-400">{sectionIndex + 1}.</span>
                                       {section.title}
                                     </Link>
                                   );
