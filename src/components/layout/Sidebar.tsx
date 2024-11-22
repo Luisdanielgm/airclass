@@ -381,6 +381,11 @@ const COURSES: Course[] = [
             title: 'Principios detrás de la regulación de capacidad por parte de los gobiernos',
             videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_5,
             path: '/courses/air-transport-economy?section=principles-behind-capacity-regulation-by-governments'
+          },
+          {
+            title: 'Capacidad desde la Perspectiva del Gobierno',
+            videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_6,
+            path: '/courses/air-transport-economy?section=capacity-from-the-perspective-of-government'
           }
         ]
       },

@@ -6,6 +6,7 @@ import { objectivesModule1 } from './subtitles/objectives-module-1';
 import { resourcesModule1 } from './subtitles/resources-module-1';
 import { capacityRegulatedByGovernments } from './subtitles/capacity-regulated-by-governments';
 import { principlesBehindCapacityRegulationByGovernments } from './subtitles/principles-behind-capacity-regulation-by-governments';
+import { capacityFromThePerspectiveOfGovernment } from './subtitles/capacity-from-the-perspective-of-government';
 
 export const airTransportEconomy: CourseData = {
   id: 'air-transport-economy',
@@ -52,6 +53,13 @@ export const airTransportEconomy: CourseData = {
       videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_5,
       path: '/courses/air-transport-economy?section=principles-behind-capacity-regulation-by-governments',
       data: principlesBehindCapacityRegulationByGovernments
+    },
+    {
+      id: 'capacity-from-the-perspective-of-government',
+      title: 'Capacidad desde la Perspectiva del Gobierno',
+      videoUrl: AIRCLASS_SERVER_VIDEOS.AIR_TRANSPORT_ECONOMY_1_6,
+      path: '/courses/air-transport-economy?section=capacity-from-the-perspective-of-government',
+      data: capacityFromThePerspectiveOfGovernment
     }
   ]
 };

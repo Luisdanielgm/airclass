@@ -54,4 +54,5 @@ export const AIRCLASS_SERVER_VIDEOS = {
   AIR_TRANSPORT_ECONOMY_1_3: 'cursos/economia_del_transporte_aereo/modulo_1/1_3_modules_resources.mp4',
   AIR_TRANSPORT_ECONOMY_1_4: 'cursos/economia_del_transporte_aereo/modulo_1/1_4_capacity_regulated_by_gobernments.mp4',
   AIR_TRANSPORT_ECONOMY_1_5: 'cursos/economia_del_transporte_aereo/modulo_1/1_5_principles_behind_capacity_regulation_by_gobernments.mp4',
+  AIR_TRANSPORT_ECONOMY_1_6: 'cursos/economia_del_transporte_aereo/modulo_1/1_6_capacity_from_perspective_government.mp4',
 } as const
