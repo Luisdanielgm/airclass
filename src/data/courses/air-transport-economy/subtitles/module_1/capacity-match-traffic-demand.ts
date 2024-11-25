@@ -1,3 +1,10 @@
 export const capacityMatchTrafficDemand = [
-    { time: 0, text: "" }
-]; 
+    { time: 0, text: "donde sea posible, los transportistas aéreos buscan igualar la capacidad con la demanda de tráfico para maximizar las ganancias y minimizar la capacidad no utilizada en cada vuelo" },
+    { time: 11.1, text: "esto es relativamente fácil para los operadores de servicios no programados, ya que la capacidad total del avión o grandes porciones de la misma suelen venderse o contratarse con mucha anticipación a la operación" },
+    { time: 25.2, text: "en contraste, puede ser muy difícil para los transportistas aéreos programados igualar la capacidad con la demanda de tráfico por cuatro razones clave, haga clic en cada icono a continuación para aprender más sobre ellas" },
+    { time: 41.9, text: "un servicio programado, por definición, debe mantener un patrón regular de operación y generalmente se espera que vuele según el horario publicado, independientemente de cuánta capacidad se haya vendido" },
+    { time: 55, text: "normalmente hay una necesidad de proporcionar capacidad suficiente para atender al tráfico bajo demanda, usualmente pasajeros de mayor rendimiento con asientos que pueden ser reservados cerca o hasta el momento de la partida" },
+    { time: 67.7, text: "mientras la demanda de tráfico puede variar según la dirección y la hora del día, las limitaciones operativas pueden requerir el uso del mismo tipo de avión para todos los vuelos en ambas direcciones" },
+    { time: 80, text: "mientras que los aumentos o disminuciones en la demanda de un servicio particular suelen ocurrir gradualmente y no se concentran en un día y hora específicos, la capacidad no puede agregarse o sustraerse en pequeñas cantidades, sino solo por un avión completo" },
+    { time: 97, text: "debido a estas razones, los transportistas aéreos programados generalmente proporcionan en promedio más capacidad que el tráfico real" }
+];
