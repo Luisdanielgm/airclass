@@ -69,36 +69,53 @@ export function Sidebar() {
 
   // Efecto para manejar la expansión inicial y actualización de sección
   useEffect(() => {
-    const currentCourseId = pathname.split('/')[2]
-    if (currentCourseId) {
-      setExpandedCourse(currentCourseId)
-      
-      // Encontrar el grupo que contiene la sección actual
-      const searchParams = new URLSearchParams(window.location.search)
-      const currentSectionId = searchParams.get('section') || 'introduction'
-      
-      const course = COURSES.find(c => c.id === currentCourseId)
-      if (course) {
-        const groupIndex = course.groups.findIndex(group => 
-          group.sections.some(section => 
-            new URLSearchParams(section.path.split('?')[1]).get('section') === currentSectionId
-          )
-        )
-        if (groupIndex !== -1) {
-          setExpandedGroup(`${currentCourseId}-${groupIndex}`)
+    const updateCurrentSection = () => {
+      const currentCourseId = pathname.split('/')[2]
+      if (currentCourseId) {
+        setExpandedCourse(currentCourseId)
+        
+        // Obtener la sección actual de la URL y manejar el caso por defecto
+        const searchParams = new URLSearchParams(window.location.search)
+        const currentSectionId = searchParams.get('section')
+        
+        if (currentSectionId) {
+          const course = COURSES.find(c => c.id === currentCourseId)
+          if (course) {
+            // Buscar la sección en todos los grupos
+            let foundGroupIndex = -1
+            const foundSection = course.groups.some((group, index) => {
+              const found = group.sections.some(section => section.id === currentSectionId)
+              if (found) {
+                foundGroupIndex = index
+                return true
+              }
+              return false
+            })
+
+            if (foundSection && foundGroupIndex !== -1) {
+              setExpandedGroup(`${currentCourseId}-${foundGroupIndex}`)
+              setCurrentSection(currentSectionId)
+            }
+          }
         }
       }
-      
-      setCurrentSection(currentSectionId)
     }
-  }, [pathname])
+
+    updateCurrentSection()
+
+    // Agregar listener para cambios en la URL
+    window.addEventListener('popstate', updateCurrentSection)
+    
+    return () => {
+      window.removeEventListener('popstate', updateCurrentSection)
+    }
+  }, [pathname, window.location.search])
 
   // Función para manejar el clic en una sección
-  const handleSectionClick = (courseId: string, groupIndex: number, sectionPath: string) => {
+  const handleSectionClick = (courseId: string, groupIndex: number, section: any) => {
     setExpandedCourse(courseId)
     setExpandedGroup(`${courseId}-${groupIndex}`)
-    const section = new URLSearchParams(sectionPath.split('?')[1]).get('section')
-    setCurrentSection(section)
+    setCurrentSection(section.id)
   }
 
   useEffect(() => {
@@ -181,9 +198,7 @@ export function Sidebar() {
                                 {group.sections.map((section, sectionIndex) => {
                                   const isCurrentSection = () => {
                                     if (pathname !== '/courses/' + course.id) return false;
-                                    const searchParams = new URLSearchParams(section.path.split('?')[1]);
-                                    const sectionParam = searchParams.get('section');
-                                    return sectionParam === (currentSection || 'introduction');
+                                    return section.id === currentSection;
                                   };
                                   
                                   return (
@@ -195,7 +210,7 @@ export function Sidebar() {
                                           ? 'bg-blue-500/20 text-blue-400'
                                           : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/30'
                                       }`}
-                                      onClick={() => handleSectionClick(course.id, groupIndex, section.path)}
+                                      onClick={() => handleSectionClick(course.id, groupIndex, section)}
                                     >
                                       <span className="inline-block w-4 text-blue-400">{sectionIndex + 1}.</span>
                                       {section.title}

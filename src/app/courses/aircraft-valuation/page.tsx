@@ -45,6 +45,17 @@ function AircraftValuationContent() {
     ? allSections[currentSectionIndex + 1]
     : null
 
+  const handleNavigation = (section: any) => {
+    if (section) {
+      const newUrl = new URL(section.path, window.location.origin)
+      window.history.pushState({}, '', newUrl)
+      
+      // Disparar un evento PopState manualmente
+      const popStateEvent = new PopStateEvent('popstate', {})
+      window.dispatchEvent(popStateEvent)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 flex flex-col">
       <div className="flex-1 p-4">
@@ -78,7 +89,14 @@ function AircraftValuationContent() {
                     ? 'bg-blue-500 hover:bg-blue-600 text-white' 
                     : 'bg-slate-700 text-slate-400 cursor-not-allowed'
                 }`}
-                onClick={e => !previousSection && e.preventDefault()}
+                onClick={(e) => {
+                  if (!previousSection) {
+                    e.preventDefault()
+                    return
+                  }
+                  e.preventDefault()
+                  handleNavigation(previousSection)
+                }}
               >
                 <ChevronLeftIcon className="w-4 h-4 md:w-5 md:h-5" />
                 {previousSection ? 'Video anterior' : 'No hay video anterior'}
@@ -91,7 +109,14 @@ function AircraftValuationContent() {
                     ? 'bg-blue-500 hover:bg-blue-600 text-white' 
                     : 'bg-slate-700 text-slate-400 cursor-not-allowed'
                 }`}
-                onClick={e => !nextSection && e.preventDefault()}
+                onClick={(e) => {
+                  if (!nextSection) {
+                    e.preventDefault()
+                    return
+                  }
+                  e.preventDefault()
+                  handleNavigation(nextSection)
+                }}
               >
                 {nextSection ? 'Siguiente video' : 'No hay más videos'}
                 <ChevronRightIcon className="w-4 h-4 md:w-5 md:h-5" />
